@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "vsts-extensions-RazTypeExtensions",
-    "version": "1.0.0",
+    "version": "1.0.4",
     "name": "RazType Widgets",
     "description": "RazTypes containing different widgets extending dashboards",
     "publisher": "RazType",
@@ -23,33 +23,103 @@
             ],
             "properties": {
                 "name": "RazType - Hello World Widget",
-                "description": "My first widget",
+                "description": "My first widget (Tutorial Part 1)",
                 "catalogIconUrl": "img/logo.jpg",
                 "previewImageUrl": "img/preview.jpg",                            
                 "uri": "hello-world.html",
                 "supportedSizes": [
-                     {
-                            "rowSpan": 1,
-                            "columnSpan": 2
-                        }
-                    ],
+                    {
+                        "rowSpan": 1,
+                        "columnSpan": 2
+                    }
+                ],
                 "supportedScopes": ["project_team"]
+            }
+        },
+        {
+            "id": "RazType-HelloWorldRestApiWidget",
+            "type": "ms.vss-dashboards-web.widget",
+            "targets": [
+                "ms.vss-dashboards-web.widget-catalog"
+            ],
+            "properties": {
+                "name": "RazType - Hello World (with ADO REST API) Widget",
+                "description": "My second widget (Tutorial Part 2)",
+                "catalogIconUrl": "img/logo.jpg",
+                "previewImageUrl": "img/preview.jpg",                            
+                "uri": "hello-world2.html",
+                "supportedSizes": [
+                    {
+                        "rowSpan": 1,
+                        "columnSpan": 2
+                    }
+                ],
+                "supportedScopes": ["project_team"]
+            }
+        },
+        {
+            "id": "RazType-HelloWorldConfigurationWidget",
+            "type": "ms.vss-dashboards-web.widget",
+            "targets": [
+                "ms.vss-dashboards-web.widget-catalog",
+                "RazType.vsts-extensions-RazTypeExtensions.RazType-HelloWorldConfigurationWidget.Configuration"
+            ],
+            "properties": {
+                "name": "RazType - Hello World (with Configuration) Widget",
+                "description": "My third widget (Tutorial Part 3)",
+                "catalogIconUrl": "img/logo.jpg",
+                "previewImageUrl": "img/preview.jpg",
+                "uri": "hello-world3.html",
+                "isNameConfigurable": true,
+                "supportedSizes": [
+                    {
+                        "rowSpan": 1,
+                        "columnSpan": 2
+                    },
+                    {
+                        "rowSpan": 2,
+                        "columnSpan": 2
+                    }
+                ],
+                "supportedScopes": ["project_team"]
+            }
+        },
+        {
+            "id": "RazType-HelloWorldConfigurationWidget.Configuration",
+            "type": "ms.vss-dashboards-web.widget-configuration",
+            "targets": [ "ms.vss-dashboards-web.widget-configuration" ],
+            "properties": {
+                "name": "RazType - Hello World Widget Configuration",
+                "description": "Configures RazType - Hello World Widget",
+                "uri": "hello-world3-configuration.html"
             }
         }
     ],
     "files": [
         {
-            "path": "hello-world.html", "addressable": true
+            "path": "sdk/scripts", "addressable": true
+        },
+        {
+            "path": "img", "addressable": true
         },
         {
             "path": "scripts",
             "addressable": true
         },
         {
-            "path": "sdk/scripts", "addressable": true
+            "path": "hello-world.html", "addressable": true
         },
         {
-            "path": "img", "addressable": true
+            "path": "hello-world2.html", "addressable": true
+        },
+        {
+            "path": "hello-world3.html", "addressable": true
+        },
+        {
+            "path": "hello-world3-configuration.html", "addressable": true
         }
+    ],
+    "scopes": [
+        "vso.work"
     ]
 }
