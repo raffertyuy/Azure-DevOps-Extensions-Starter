@@ -1,8 +1,7 @@
 This folder contains RazType Azure DevOps Dashboards Custom Widgets.
 
 ## Widgets in this Repo
-1. Hello World Widget
-This is the getting started widget as instructed in the [official docs](https://learn.microsoft.com/en-us/azure/devops/extend/develop/add-dashboard-widget?view=azure-devops).
+1. **Hello World Widget:** Getting started widget as instructed in the [official docs](https://learn.microsoft.com/en-us/azure/devops/extend/develop/add-dashboard-widget?view=azure-devops).
 
 ## Useful Commands for Reference
 
