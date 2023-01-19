@@ -42,6 +42,10 @@
             "path": "hello-world.html", "addressable": true
         },
         {
+            "path": "scripts",
+            "addressable": true
+        },
+        {
             "path": "sdk/scripts", "addressable": true
         },
         {
