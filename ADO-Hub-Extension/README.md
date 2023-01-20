@@ -4,6 +4,7 @@ This folder contains RazType Azure DevOps Hub Extensions
 1. **[Raz Hub](raz-hub.html):** Basic hub for all project components, started from [getting started docs](https://learn.microsoft.com/en-us/azure/devops/extend/get-started/node?toc=%2Fazure%2Fdevops%2Fmarketplace-extensibility%2Ftoc.json&view=azure-devops).
 2. **[Raz Project Hub](./raz-proj-hub.html):** Same as #1 but for Org settings.
 3. **[Raz Organization Hub](./raz-org-hub.html):** Same as #1 but for Org settings.
+4. **RazType Hub Group:** A hub group with a [Hello Hub](./raz-hello-hub.html).
 
 ## Learnings
 - `contributions`→`targets` specify which tab the extension will be placed in.

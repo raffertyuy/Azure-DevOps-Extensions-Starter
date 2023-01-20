@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "vsts-extensions-Hubs",
     "publisher": "RazType",
-    "version": "1.0.4",
+    "version": "1.0.6",
     "name": "RazType Hubs",
     "description": "RazTypes containing Azure DevOps Hub extensions",
     "public": false,
@@ -21,8 +21,6 @@
             "type": "ms.vss-web.hub",
             "name": "Raz Hub",
             "description": "RazType Project DevOps Hub",
-            "catalogIconUrl": "img/logo.jpg",
-                "previewImageUrl": "img/preview.jpg",
             "targets": [
                 "ms.vss-work-web.work-hub-group",
                 "ms.vss-code-web.code-hub-group",
@@ -39,8 +37,6 @@
             "type": "ms.vss-web.hub",
             "name": "Raz Project Hub",
             "description": "RazType Project DevOps Hub",
-            "catalogIconUrl": "img/logo.jpg",
-                "previewImageUrl": "img/preview.jpg",
             "targets": [
                 "ms.vss-web.project-admin-hub-group"
             ],
@@ -54,14 +50,39 @@
             "type": "ms.vss-web.hub",
             "name": "Raz Organization Hub",
             "description": "RazType Organization DevOps Hub",
-            "catalogIconUrl": "img/logo.jpg",
-                "previewImageUrl": "img/preview.jpg",
             "targets": [
                 "ms.vss-web.collection-admin-hub-group"
             ],
             "properties": {
                 "name": "Raz Organization Hub",
                 "uri": "raz-org-hub.html"
+            }
+        },
+        {
+            "id": "raz-hello-hub",
+            "type": "ms.vss-web.hub",
+            "name": "Raz Hello Hub",
+            "description": "RazType Hello DevOps Hub",
+            "targets": [
+                ".raz-hub-group"
+            ],
+            "properties": {
+                "name": "Hello",
+                "order": 99,
+                "uri": "raz-hello-hub.html"
+            }
+        },
+        {
+            "id": "raz-hub-group",
+            "type": "ms.vss-web.hub-group",
+            "description": "Adds RazTypes hub group at the project/team-level",
+            "targets": [
+                "ms.vss-web.project-hub-groups-collection"
+            ],
+            "properties": {
+                "name": "RazTypes",
+                "icon": "img/logo.jpg",
+                "order": 100
             }
         }
     ],
@@ -80,6 +101,10 @@
         },
         {
             "path": "raz-proj-hub.html",
+            "addressable": true
+        },
+        {
+            "path": "raz-hello-hub.html",
             "addressable": true
         },
         {
