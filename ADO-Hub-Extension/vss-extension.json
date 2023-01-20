@@ -1,0 +1,90 @@
+{
+    "manifestVersion": 1,
+    "id": "vsts-extensions-Hubs",
+    "publisher": "RazType",
+    "version": "1.0.4",
+    "name": "RazType Hubs",
+    "description": "RazTypes containing Azure DevOps Hub extensions",
+    "public": false,
+    "categories": ["Azure Boards, Azure Repos, Azure Pipelines, Azure Test Plans"],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "icons": {
+        "default": "img/logo.jpg"
+    },
+    "contributions": [
+        {
+            "id": "raz-hub",
+            "type": "ms.vss-web.hub",
+            "name": "Raz Hub",
+            "description": "RazType Project DevOps Hub",
+            "catalogIconUrl": "img/logo.jpg",
+                "previewImageUrl": "img/preview.jpg",
+            "targets": [
+                "ms.vss-work-web.work-hub-group",
+                "ms.vss-code-web.code-hub-group",
+                "ms.vss-build-web.build-release-hub-group",
+                "ms.vss-test-web.test-hub-group"
+            ],
+            "properties": {
+                "name": "Raz Hub",
+                "uri": "raz-hub.html"
+            }
+        },
+        {
+            "id": "raz-proj-hub",
+            "type": "ms.vss-web.hub",
+            "name": "Raz Project Hub",
+            "description": "RazType Project DevOps Hub",
+            "catalogIconUrl": "img/logo.jpg",
+                "previewImageUrl": "img/preview.jpg",
+            "targets": [
+                "ms.vss-web.project-admin-hub-group"
+            ],
+            "properties": {
+                "name": "Raz Project Hub",
+                "uri": "raz-proj-hub.html"
+            }
+        },
+        {
+            "id": "raz-org-hub",
+            "type": "ms.vss-web.hub",
+            "name": "Raz Organization Hub",
+            "description": "RazType Organization DevOps Hub",
+            "catalogIconUrl": "img/logo.jpg",
+                "previewImageUrl": "img/preview.jpg",
+            "targets": [
+                "ms.vss-web.collection-admin-hub-group"
+            ],
+            "properties": {
+                "name": "Raz Organization Hub",
+                "uri": "raz-org-hub.html"
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "node_modules/vss-web-extension-sdk/lib",
+            "addressable": true,
+            "packagePath": "lib"
+        },
+        {
+            "path": "img", "addressable": true
+        },
+        {
+            "path": "raz-hub.html",
+            "addressable": true
+        },
+        {
+            "path": "raz-proj-hub.html",
+            "addressable": true
+        },
+        {
+            "path": "raz-org-hub.html",
+            "addressable": true
+        }
+    ]
+}
