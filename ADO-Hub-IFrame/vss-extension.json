@@ -1,0 +1,71 @@
+{
+    "manifestVersion": 1,
+    "id": "vsts-extensions-iframe",
+    "publisher": "RazType",
+    "version": "1.0.6",
+    "name": "iFrame Tab for DevOps Projects",
+    "description": "This extension simply adds an iFrame on the DevOps project navigation bar.",
+    "public": false,
+    "categories": ["Azure Boards"],
+    "content": {
+        "details": {
+            "path": "overview.md"
+        }
+    },
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "icons": {
+        "default": "img/logo.png"
+    },
+    "contributions": [
+        {
+            "id": "iframe-hub",
+            "type": "ms.vss-web.hub",
+            "name": "iFrame",
+            "description": "iFrame Hub",
+            "targets": [
+                ".iframe-hubgroup"
+            ],
+            "properties": {
+                "name": "iFrame",
+                "icon": "img/logo.png",
+                "order": 99,
+                "uri": "iframe.html"
+            }
+        },
+        {
+            "id": "iframe-hubgroup",
+            "type": "ms.vss-web.hub-group",
+            "description": "iFrame Hub Group",
+            "targets": [
+                "ms.vss-web.project-hub-groups-collection"
+            ],
+            "properties": {
+                "name": "iFrame",
+                "icon": "img/logo.png",
+                "order": 100
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "node_modules/vss-web-extension-sdk/lib",
+            "addressable": true,
+            "packagePath": "lib"
+        },
+        {
+            "path": "img", "addressable": true
+        },
+        {
+            "path": "overview.md",
+            "addressable": true
+        },
+        {
+            "path": "iframe.html",
+            "addressable": true
+        }
+    ]
+}

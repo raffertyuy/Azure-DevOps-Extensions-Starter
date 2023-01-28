@@ -1,0 +1,72 @@
+{
+    "manifestVersion": 1,
+    "id": "vsts-extensions-ChatGPT",
+    "publisher": "RazType",
+    "version": "1.0.6",
+    "name": "ChatGPT Tab for DevOps Projects",
+    "description": "This extension simply adds OpenAI's ChatGPT (https://chat.openai.com/chat) as a the DevOps project navigation bar. User authentication with OpenAI is still required.",
+    "public": true,
+    "categories": ["Azure Boards"],
+    "content": {
+        "details": {
+            "path": "overview.md"
+        }
+    },
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "icons": {
+        "default": "img/logo.png"
+    },
+    "contributions": [
+        {
+            "id": "chatgpt-hub",
+            "type": "ms.vss-web.hub",
+            "name": "ChatGPT",
+            "description": "ChatGPT Hub",
+            "targets": [
+                ".openai-hubgroup"
+            ],
+            "properties": {
+                "name": "ChatGPT",
+                "icon": "img/logo.png",
+                "height": "100%",
+                "order": 99,
+                "uri": "chatgpt.html"
+            }
+        },
+        {
+            "id": "openai-hubgroup",
+            "type": "ms.vss-web.hub-group",
+            "description": "OpenAI Hub Group",
+            "targets": [
+                "ms.vss-web.project-hub-groups-collection"
+            ],
+            "properties": {
+                "name": "ChatGPT",
+                "icon": "img/logo.png",
+                "order": 100
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "node_modules/vss-web-extension-sdk/lib",
+            "addressable": true,
+            "packagePath": "lib"
+        },
+        {
+            "path": "img", "addressable": true
+        },
+        {
+            "path": "overview.md",
+            "addressable": true
+        },
+        {
+            "path": "chatgpt.html",
+            "addressable": true
+        }
+    ]
+}

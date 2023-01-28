@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="lib/VSS.SDK.min.js"></script>
+    <style>
+        body {
+            background-color: lightgray;
+            color: white;
+            margin: 0;
+            font-family: "Segoe UI VSS (Regular)","-apple-system",BlinkMacSystemFont,"Segoe UI",sans-serif;
+        }
+        iframe{      
+            display: block;  /* iframes are inline by default */   
+            height: 100vh;  /* Set height to 100% of the viewport height */   
+            width: 100vw;  /* Set width to 100% of the viewport width */     
+            border: none; /* Remove default border */
+            background: gray; /* Just for styling */
+        }
+    </style>
+    <script type="text/javascript">
+        VSS.init();
+        VSS.ready(function() {
+            document.getElementById("name").innerText = VSS.getWebContext().user.name;
+        });
+    </script>
+</head>
+<body>
+    <iframe src="https://www.raffertyuy.com" frameborder="0"></iframe>
+</body>
+</html>

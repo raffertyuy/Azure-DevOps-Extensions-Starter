@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="lib/VSS.SDK.min.js"></script>
+    <style>
+        body {
+            background-color: lightgray;
+            color: white;
+            margin: 0;
+            font-family: "Segoe UI VSS (Regular)","-apple-system",BlinkMacSystemFont,"Segoe UI",sans-serif;
+        }
+        iframe, object, embed {      
+            display: block;  /* iframes are inline by default */   
+            height: 100vh;  /* Set height to 100% of the viewport height */   
+            width: 100vw;  /* Set width to 100% of the viewport width */     
+            border: none; /* Remove default border */
+            background: gray; /* Just for styling */
+        }
+    </style>
+    <script type="text/javascript">
+        VSS.init();
+        VSS.ready(function() {
+            document.getElementById("name").innerText = VSS.getWebContext().user.name;
+        });
+    </script>
+    <!--
+    <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+	<script src="x-frame-bypass.js" type="module"></script>
+
+    # add in <body>
+    <iframe is="x-frame-bypass" src="https://chat.openai.com/chat"></iframe>
+    -->
+</head>
+<body>
+    <iframe src="https://chat.openai.com/chat" frameborder="0"></iframe>
+    <!--<object data="https://chat.openai.com/chat" type="text/html">Alternative Content</object> -->
+    <!--
+    <object data="https://chat.openai.com/chat">
+        <embed src="https://chat.openai.com/chat"></embed>
+        Error: Embedded data could not be displayed.
+    </object>
+    -->
+</body>
+</html>
