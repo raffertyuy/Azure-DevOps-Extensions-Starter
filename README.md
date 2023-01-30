@@ -15,6 +15,36 @@ Azure DevOps allows creating custom [web extensions](https://learn.microsoft.com
 3. Add different widget sizes in the `supportedSizes` node. _(WARNING: If you remove an already supported size, the widget will fail to load properly.)_
 4. Adding/changing extension `scopes` is not supported. Workaround is to _remove_ the existing extension or upload into a new name.
 
+### When Using Typescript
+- Add the following to the `dependencies` of `package.json`
+```json
+"dependencies": {
+   ...
+   "vss-web-extension-sdk": "^2.109.0"
+}
+```
+- Add the following to `compilerOptions` of `tsconfig.json`
+```json
+"compilerOptions": {
+    ...
+    "outDir": "dist",
+    "types": [
+        "vss-web-extension-sdk"
+    ]
+}
+```
+- Add the following to the `files` of the `vss-extension.json` manifest
+```json
+"files": [
+    ...
+    {
+        "path": "dist",
+        "addressable": true,
+        "packagePath": "scripts"
+    }
+]
+```
+
 ### How to package and publish web extensions
 #### Pre-requisites
 1. Install the packaging tool `npm i -g tfx-cli`
