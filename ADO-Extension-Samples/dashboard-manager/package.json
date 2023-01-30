@@ -1,0 +1,13 @@
+{
+  "name": "dashboardmanager",
+  "version": "0.1.0",
+  "description": "manage dashboards",
+  "author": "arsaveli",
+  "devDependencies": {
+    "bower": "*",
+    "tfx-cli": "^0.12.0"
+  },
+  "scripts": {
+    "postinstall": "bower install"
+  }
+}
