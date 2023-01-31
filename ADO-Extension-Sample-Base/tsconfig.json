@@ -19,7 +19,6 @@
         ],
         "types": [
             "react",
-            "jest",
             "node"
         ],
         "esModuleInterop": true
