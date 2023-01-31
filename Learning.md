@@ -1,80 +1,104 @@
 # Learning Notes
 
 This document contains learning notes from these extensions It contains:
-1. [VSS Extension Samples (that still work)](#vss-extension---samples-that-work-as-of-jan-2023)
-2. [VSS Extension using TypeScript](#vss-extension---using-typescript-instead-of-javascript)
-3. [VSS Extension - Understanding the SDK](#vss-extension---understanding-the-sdk)
+1. 
 
 ---
-## VSS Extension - samples that work (as of Jan-2023)
-There are a lot of extension samples in GitHub that no longer work for various reasons (developed for older versions of Azure DevOps, using old node modules, etc.). This list contains the extension code samples that I was able to deploy.
+## VSS Extension - Which SDK?
+The main SDK dependencies to use are:
+- [azure-devops-extension-sdk](https://github.com/Microsoft/azure-devops-extension-sdk): Required module for Azure DevOps extensions which allows communication between the host page and the extension iframe.
+- [azure-devops-extension-api](https://github.com/Microsoft/azure-devops-extension-api): Contains REST client libraries for the various Azure DevOps feature areas.
+- [azure-devops-ui](https://developer.microsoft.com/azure-devops): UI library containing the React components used in the Azure DevOps web UI.
 
-1. [**Dashboard Manager**](https://github.com/microsoft/vsts-extension-samples/tree/master/dashboard-manager) by arsaveli
+Unlike the old SDK, this new one split the dependencies into three.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![Dashboard Manager](/assets/sample-dashboardmanager.png)
-
----
-## VSS Extension - using Typescript instead of Javascript
-### Problem
-The official [tutorial](https://learn.microsoft.com/en-us/azure/devops/extend/overview?toc=%2Fazure%2Fdevops%2Fmarketplace-extensibility%2Ftoc.json&view=azure-devops) use **javascript** while most samples in GitHub like [this](https://github.com/microsoft/vsts-extension-samples) use **typescript** (or **bower**). Even the [extension sdk readme](https://github.com/Microsoft/azure-devops-extension-sdk) straightaway mentions **typescript**. This section describes how it's done.
-
-### Main Point
-You may alternatively use **typescript** or **bower** to _compile/generate_ javascript files. Then do as per normal and have your `*.html` refer to the `*.js` output.
-
-### More detailed guidance when using TypeScript
-- Install [typescript](https://www.typescripttutorial.net/typescript-tutorial/setup-typescript/)
-- Add the VSS extension dependency to `package.json`
-```json
-"dependencies": {
-   ...
-   "vss-web-extension-sdk": "^2.109.0"
-}
-```
-- Output the `.js` files to an output directory. Add the following to `compilerOptions` of `tsconfig.json`
-```json
-"compilerOptions": {
-    ...
-    "outDir": "dist",
-    "types": [
-        "vss-web-extension-sdk"
-    ]
-}
-```
-- Update the extension manifest to use the output `*.js` files. Add the following to the `files` of the `vss-extension.json` manifest
-```json
-"files": [
-    ...
-    {
-        "path": "dist",
-        "addressable": true,
-        "packagePath": "scripts"
-    }
-]
-```
-- Update the `*.html` and use the output in the `dist` folder. For example
-```html
-<script inline src="dist/VSS.SDK.min.js"></script>
-```
-
-> **NOTE:** The above concepts can be used for other approaches such as:
-> - Using [Bower](https://bower.io/) instead of typescript
-> - Compile/output the `*.html` and `*.css` files in addition to the `*.js` files (e.g. React-TypeScript)
+> **WARNING:**
+> - The [official documentation](https://learn.microsoft.com/en-us/azure/devops/extend/overview?toc=%2Fazure%2Fdevops%2Fmarketplace-extensibility%2Ftoc.json&view=azure-devops) (as of Jan 2023) has tutorial and samples using the **_old_** [SDK](https://github.com/microsoft/vss-web-extension-sdk).
+> - Unfortunately, the same is true for most other references, hence my [deprecated folder](/deprecated/).
+> - So if you insist on using an old tutorial or sample, you can either (a) figure out how to update the code and use the SDK, or (b) keep using the old SDK as it still works.
 
 ---
-## VSS Extension - Understanding the SDK
-Since the SDK is not well documented, here's my attempt on how to navigate through it.
+## VSS Extension - Learning through Samples
+Until the [official documentation](https://learn.microsoft.com/en-us/azure/devops/extend/overview?toc=%2Fazure%2Fdevops%2Fmarketplace-extensibility%2Ftoc.json&view=azure-devops) is updated, the best way to learn is through samples.
 
-### Basics
-- THERE ARE **TWO** SDKs!
-    1. [vss-web-extension-sdk](https://github.com/microsoft/vss-web-extension-sdk). This is the main SDK that the [tutorial](https://learn.microsoft.com/en-us/azure/devops/extend/overview?toc=%2Fazure%2Fdevops%2Fmarketplace-extensibility%2Ftoc.json&view=azure-devops) is using. Unfortunately this repo starts with this confusing message. Ignore this message as we still need this SDK.
-    2. [azure-devops-extension-sdk](https://github.com/Microsoft/azure-devops-extension-sdk). This the link the repo above redirects to.
+The docs are still useful though, just bear in mind that if the tutorial/sample is using `vss-web-extension-sdk`, there's work to update that to the new `azure-devops-extension-sdk`. I especially found the following useful:
+- [Extension Manifest Reference](https://learn.microsoft.com/en-us/azure/devops/extend/develop/manifest?view=azure-devops)
+- [Contribution Model](https://learn.microsoft.com/en-us/azure/devops/extend/develop/contributions-overview?toc=%2Fazure%2Fdevops%2Fmarketplace-extensibility%2Ftoc.json&view=azure-devops)
+- [Azure DevOps REST API Reference](https://learn.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-7.1)
 
-- Understand that the SDK is mainly calls various methods in the [Azure DevOps REST API](https://learn.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-7.1).
+So to learn, the main sample project is [this repo](https://github.com/microsoft/azure-devops-extension-sample).
 
-### Tips
-- Since there isn't much documentation, the main way to know what's available is to download the SDKs
+### Installing the Samples
+The [samples](https://github.com/microsoft/azure-devops-extension-sample) are lumped into a single manifest. It will create a single package that will install everything in your Azure DevOps Project. To install, here are the steps:
+1. Install Node.js version 16 (later versions do not work due to some dependencies, as of Jan 2023)
+2. Try `npm install`
+3. If you get a bunch of errors, try installing the dependencies specified in the [sample readme](https://github.com/microsoft/azure-devops-extension-sample#readme) and try `npm install` again. _(NOTE: Not everything needs to be globally installed, I just did to get it working fast.)_
     ```bash
-    git clone https://github.com/microsoft/vss-web-extension-sdk.git
-    git clone https://github.com/microsoft/azure-devops-extension-sdk.git
+    npm install -g typescript
+    npm install -g node-sass
+    npm install -g webpack
     ```
-- Open these in VSCode and use the Outline view
+4. Modify the `azure-devops-extension.json` manifest and change to your registered **Publisher Name**.
+5. Build and generate the `*.vsix` through
+    ```bash
+    npm run build
+    npm run package-extension
+    ```
+6. Upload the extension in the [Publishing Portal](https://marketplace.visualstudio.com/manage).
+
+### Learnings from the Samples
+- Written using [TypeScript](https://www.typescriptlang.org/). In fact, other than the [official documentation](https://learn.microsoft.com/en-us/azure/devops/extend/overview?toc=%2Fazure%2Fdevops%2Fmarketplace-extensibility%2Ftoc.json&view=azure-devops) tutorial, every other sample seems to be created using **typescript**.
+- The HTML and CSS are also created using typescript. Everything is built from `src/` and outputed to `dist/`. This could be the standard `tsconfig.json` template.
+    ```json
+    {
+        "compilerOptions": {
+            "charset": "utf8",
+            "experimentalDecorators": true,
+            "module": "amd",
+            "moduleResolution": "node",
+            "noImplicitAny": true,
+            "noImplicitThis": true,
+            "strict": true,
+            "target": "es5",
+            "rootDir": "src/",
+            "outDir": "dist/",
+            "jsx": "react",
+            "lib": [
+            "es5",
+            "es6",
+            "dom",
+            "es2015.promise"
+            ],
+            "types": [
+                "react",
+                "jest",
+                "node"
+            ],
+            "esModuleInterop": true
+        }
+    }
+    ```
+- Static files are placed in `static/`.
+- the `package.json` refers to all three Azure devops extension modules.
+- the `package.json` also contains a useful `script`, especially its way to append the manifest `.json` from the folders' respective `<extension-name>.json`.
+    ```json
+    "scripts": {
+        "clean": "rimraf ./dist",
+        "compile": "npm run clean && npm run test && webpack --mode production",
+        "compile:dev": "npm run clean && npm run test && webpack --mode development",
+        "build": "npm run compile",
+        "build:dev": "npm run compile:dev && npm run postbuild",
+        "postbuild": "npm run package-extension -- --rev-version",
+        "package-extension": "tfx extension create --manifest-globs azure-devops-extension.json src/Samples/**/*.json",
+        "publish-extension": "tfx extension publish --manifest-globs azure-devops-extension.json src/Samples/**/*.json",
+        "test": "cross-env TEST_REPORT_FILENAME=test-results.xml jest --verbose"
+    },
+    "dependencies": {
+        "azure-devops-extension-api": "~1.157.0",
+        "azure-devops-extension-sdk": "~2.0.11",
+        "azure-devops-ui": "~2.164.0",
+        "react": "~16.13.1",
+        "react-dom": "~16.13.1"
+    },
+    ```
+- MAYBE the best way to create a new extension is to use this sample base code and clean it up (although it is using an older NodeJS version). This is in [this folder](/ADO-Extension-Sample-Base/) with a few samples for reference.
