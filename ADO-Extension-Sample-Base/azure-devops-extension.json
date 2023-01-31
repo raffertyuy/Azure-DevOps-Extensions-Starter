@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "ms-samples",
     "publisher": "RazType",
-    "version": "1.0.392",
+    "version": "1.0.394",
     "name": "Extension Sample",
     "description": "Azure DevOps extension sample",
     "categories": [
