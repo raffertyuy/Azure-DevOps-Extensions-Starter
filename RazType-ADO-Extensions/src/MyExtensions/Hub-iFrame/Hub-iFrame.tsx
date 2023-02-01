@@ -1,7 +1,9 @@
+import "azure-devops-ui/Core/override.css";
+import "./Hub-iFrame.scss";
+
 import * as React from "react";
 import * as SDK from "azure-devops-extension-sdk";
 
-import { Header, TitleSize } from "azure-devops-ui/Header";
 import { Page } from "azure-devops-ui/Page";
 
 import { showRootComponent } from "../../Common";

@@ -9,13 +9,18 @@ Looking forward to working with you.
 ## Azure DevOps Extensions
 Azure DevOps allows creating custom [web extensions](https://learn.microsoft.com/en-us/azure/devops/extend/get-started/node?toc=%2Fazure%2Fdevops%2Fmarketplace-extensibility%2Ftoc.json&view=azure-devops).
 
-### Tips for updating web extensions
+### Local Development, Debug and Hot Reload
+Check out [this repo](https://github.com/microsoft/azure-devops-extension-hot-reload-and-debug) for how you can debug extensions locally.
+- Some extensions to this repo are implemented in the [RazTpe-ADO-Extensions-Hot-Reload-and-Debug](/RazType-ADO-Extensions-Hot-Reload-and-Debug/) folder.
+- **QUICK TIP:** When your un in debug mode, point to the specific URL (i.e. https://localhost:3000/dist/Hub-iFrame/Hub-iFrame.html)
+
+### Tips for updating extensions
 1. Version number should always be incremented on every update. This is done in the `vss-extension.json` file. When updating an extension, all organizations using the widgets will get the update.
 2. Additional folders should be added in the `files` node of `vss-extension.json`.
 3. Add different widget sizes in the `supportedSizes` node. _(WARNING: If you remove an already supported size, the widget will fail to load properly.)_
 4. Adding/changing extension `scopes` is not supported. Workaround is to _remove_ the existing extension or upload into a new name.
 
-### How to package and publish web extensions
+### How to package and publish extensions
 #### Pre-requisites
 1. Install the packaging tool `npm i -g tfx-cli`
 2. Create a publisher profile in the [Publishing Portal](https://marketplace.visualstudio.com/manage/createpublisher)

@@ -36,7 +36,7 @@
     "copy-webpack-plugin": "^7.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
-    "node-sass": "^7.0.0",
+    "sass": "^1.49.9",
     "rimraf": "~2.6.2",
     "sass-loader": "^13.0.0",
     "style-loader": "~0.23.1",

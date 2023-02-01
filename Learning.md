@@ -71,7 +71,6 @@ The [samples](https://github.com/microsoft/azure-devops-extension-sample) are lu
             ],
             "types": [
                 "react",
-                "jest",
                 "node"
             ],
             "esModuleInterop": true
@@ -101,4 +100,7 @@ The [samples](https://github.com/microsoft/azure-devops-extension-sample) are lu
         "react-dom": "~16.13.1"
     },
     ```
+- the `--rev-version` in `postbuild` is handy, it updates the version of the manifest file automatically.
 - MAYBE the best way to create a new extension is to use this sample base code and clean it up (although it is using an older NodeJS version). This is in [this folder](/ADO-Extension-Sample-Base/) with a few samples for reference.
+    - Removed tests (`__mocks__` and `Tests` folders and `jest` module dependencies)
+    - Changed `Samples/` to `MyExtensions/`
