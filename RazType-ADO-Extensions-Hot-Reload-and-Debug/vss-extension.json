@@ -1,6 +1,6 @@
 {
   "manifestVersion": 1,
-  "version": "1.0.14",
+  "version": "1.0.16",
   "name": "RazType Hot Reload and Debug",
   "description": "Use hot reload and debug directly in VS Code",
   "publisher": "RazType",

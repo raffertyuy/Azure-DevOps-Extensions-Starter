@@ -1,18 +1,10 @@
 @import "node_modules/azure-devops-ui/Core/_platformCommon.scss";
 
 .hub-iframe {
-    background-color: green; /* changed to green to know if scss is working */
+    background-color: blue; /* changed to green to know if scss is working */
     color: white;
     margin: 5px; /* added margin to know if scss is working */
     font-family: "Segoe UI VSS (Regular)","-apple-system",BlinkMacSystemFont,"Segoe UI",sans-serif;
-}
-
-.hub-iframe iframe {
-    display: block;  /* iframes are inline by default */   
-    height: 100vh;  /* Set height to 100% of the viewport height */   
-    width: 100vw;  /* Set width to 100% of the viewport width */     
-    border: none; /* Remove default border */
-    background: gray; /* Just for styling */
 }
 
 iframe {
@@ -21,5 +13,5 @@ iframe {
     width: 100vw;  /* Set width to 100% of the viewport width */     
     border: none; /* Remove default border */
     margin: 5px;
-    background: blue; /* Just for styling */
+    background: green; /* Just for styling */
 }
