@@ -3,9 +3,9 @@ const fs = require("fs");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const entries = fs
-  .readdirSync(path.join(__dirname, "src"))
-  .filter((dir) => fs.statSync(path.join("src", dir)).isDirectory())
-  .reduce((acc, dir) => ({ ...acc, [dir]: `./src/${dir}/${dir}` }), {});
+  .readdirSync(path.join(__dirname, "src/MyExtensions"))
+  .filter((dir) => fs.statSync(path.join("src/MyExtensions", dir)).isDirectory())
+  .reduce((acc, dir) => ({ ...acc, [dir]: `./src/MyExtensions/${dir}/${dir}` }), {});
 
 module.exports = {
   entry: entries,
@@ -20,7 +20,7 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin({
-      patterns: [{ from: "**/*.html", context: "src" }],
+      patterns: [{ from: "**/*.html", context: "src/MyExtensions" }],
     }),
   ],
   module: {

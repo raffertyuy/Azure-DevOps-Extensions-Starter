@@ -2,6 +2,10 @@
   "name": "my-extension",
   "description": "My Sample Extension",
   "author": "RazType",
+  "keywords": [
+    "extensions",
+    "Azure DevOps"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
