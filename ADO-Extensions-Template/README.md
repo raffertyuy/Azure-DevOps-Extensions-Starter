@@ -1,4 +1,4 @@
-# Azure DevOps Extension Hot Reload and Debug
+# ADO Base Template Extension
 
 This repository is my attempt to combine the best practices of these two code samples:
 1. [azure-devops-extension-sample](https://github.com/microsoft/azure-devops-extension-sample)

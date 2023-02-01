@@ -10,6 +10,8 @@ import { ZeroData, ZeroDataActionType } from "azure-devops-ui/ZeroData";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
+import { showRootComponent } from "../../common";
+
 interface IHubState {
   dialogShown: boolean;
   panelShown: boolean;
@@ -116,4 +118,4 @@ class HubHotReloadContent extends React.Component<{}, IHubState> {
   }
 }
 
-ReactDOM.render(<HubHotReloadContent />, document.getElementById("root"));
+showRootComponent(<HubHotReloadContent />);

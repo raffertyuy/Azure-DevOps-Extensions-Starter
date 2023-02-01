@@ -2,10 +2,10 @@ import "azure-devops-ui/Core/override.css";
 import "./hub-iframe.scss";
 
 import * as React from "react";
-import * as ReactDOM from "react-dom";
 import * as SDK from "azure-devops-extension-sdk";
 
 import { Page } from "azure-devops-ui/Page";
+import { showRootComponent } from "../../common";
 
 class HubIFrameContent extends React.Component<{}, {}> {
 
@@ -22,4 +22,4 @@ class HubIFrameContent extends React.Component<{}, {}> {
     }
 }
 
-ReactDOM.render(<HubIFrameContent />, document.getElementById("root"));
+showRootComponent(<HubIFrameContent />);
