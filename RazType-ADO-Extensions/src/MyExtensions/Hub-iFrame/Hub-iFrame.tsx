@@ -15,7 +15,6 @@ class HubIFrameContent extends React.Component<{}, {}> {
     public render(): JSX.Element {
         return (
             <Page className="hub-iframe flex-grow">
-                <Header title="iFrame" titleSize={TitleSize.Medium} />
                 <iframe src="https://www.raffertyuy.com" frameBorder="0"></iframe>
             </Page>
         );
