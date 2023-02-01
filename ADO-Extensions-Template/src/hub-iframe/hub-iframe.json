@@ -14,7 +14,7 @@
             ],
             "properties": {
                 "name": "iFrame Hub",
-                "uri": "dist/Hub-iFrame/Hub-iFrame.html",
+                "uri": "dist/hub-iframe/hub-iframe.html",
                 "icon": "asset://static/iframe-icon.png",
                 "supportsMobile": true
             }

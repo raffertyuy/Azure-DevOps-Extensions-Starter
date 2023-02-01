@@ -1,5 +1,5 @@
 import "azure-devops-ui/Core/override.css";
-import "./hub.scss";
+import "./hub-hotreload.scss";
 
 import * as SDK from "azure-devops-extension-sdk";
 import { Dialog } from "azure-devops-ui/Dialog";
@@ -15,7 +15,7 @@ interface IHubState {
   panelShown: boolean;
 }
 
-class Hub extends React.Component<{}, IHubState> {
+class HubHotReloadContent extends React.Component<{}, IHubState> {
   constructor(props: {}) {
     super(props);
     this.state = {
@@ -32,7 +32,7 @@ class Hub extends React.Component<{}, IHubState> {
     return (
       <Page className="hubstyle flex-grow">
         <Header
-          title="Hello Hub!"
+          title="Hello! This is the main Hot Reload sample."
           commandBarItems={[
             {
               id: "panel-button",
@@ -116,4 +116,4 @@ class Hub extends React.Component<{}, IHubState> {
   }
 }
 
-ReactDOM.render(<Hub />, document.getElementById("root"));
+ReactDOM.render(<HubHotReloadContent />, document.getElementById("root"));

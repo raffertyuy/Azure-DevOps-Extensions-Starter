@@ -1,11 +1,11 @@
 {
-  "name": "hot-reload-and-debug",
-  "description": "Use hot reload and debug directly in VS Code",
-  "author": "Microsoft",
+  "name": "my-extension",
+  "description": "My Sample Extension",
+  "author": "RazType",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/microsoft/azure-devops-extension-hot-reload-and-debug"
+    "url": "https://github.com/raffertyuy/Azure-DevOps-GitHub-Integration-Toolkit"
   },
   "scripts": {
     "clean": "rimraf ./dist",

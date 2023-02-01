@@ -9,7 +9,7 @@
       "reAttach": true,
       "pathMappings": [
         {
-          "url": "webpack://hot-reload-and-debug/src",
+          "url": "webpack://my-extension/src",
           "path": "${workspaceFolder}/src"
         }
       ]

@@ -7,12 +7,14 @@ Also submit ideas and bugs in [GitHub Issues](https://github.com/raffertyuy/Azur
 Looking forward to working with you.
 
 ## Azure DevOps Extensions
-Azure DevOps allows creating custom [web extensions](https://learn.microsoft.com/en-us/azure/devops/extend/get-started/node?toc=%2Fazure%2Fdevops%2Fmarketplace-extensibility%2Ftoc.json&view=azure-devops).
+Azure DevOps allows creating custom [extensions](https://learn.microsoft.com/en-us/azure/devops/extend/get-started/node?toc=%2Fazure%2Fdevops%2Fmarketplace-extensibility%2Ftoc.json&view=azure-devops). The challenge is that the documentation is severely lacking (see my [Learning Notes](/Learning.md)).
 
-### Local Development, Debug and Hot Reload
-Check out [this repo](https://github.com/microsoft/azure-devops-extension-hot-reload-and-debug) for how you can debug extensions locally.
-- Some extensions to this repo are implemented in the [RazTpe-ADO-Extensions-Hot-Reload-and-Debug](/RazType-ADO-Extensions-Hot-Reload-and-Debug/) folder.
-- **QUICK TIP:** When your un in debug mode, point to the specific URL (i.e. https://localhost:3000/dist/Hub-iFrame/Hub-iFrame.html)
+### Code Template based on Samples
+To make development faster, a working template is found in the [ADO-Extensions-Template](/ADO-Extensions-Template/) folder. This is template is a combination of the best practices in:
+1. [azure-devops-extension-sample](https://github.com/microsoft/azure-devops-extension-sample): the main samples repo using the latest Azure devops extensions SDK, and
+2. [azure-devops-extension-hot-reload-and-debug](https://github.com/microsoft/azure-devops-extension-hot-reload-and-debug): a way to locally debug changes (also see [this blog post](https://devblogs.microsoft.com/devops/streamlining-azure-devops-extension-development/)).
+    - To debug, install Firefox and launch the webpack-dev-server with `webpack-dev-server --mode development`
+    - Remember to point to the specific html URL that you want to debug (i.e. https://localhost:3000/dist/Hub-iFrame/Hub-iFrame.html)
 
 ### Tips for updating extensions
 1. Version number should always be incremented on every update. This is done in the `vss-extension.json` file. When updating an extension, all organizations using the widgets will get the update.

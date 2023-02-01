@@ -1,5 +1,5 @@
 import "azure-devops-ui/Core/override.css";
-import "./Hub-iFrame.scss";
+import "./hub-iframe.scss";
 
 import * as React from "react";
 import * as ReactDOM from "react-dom";

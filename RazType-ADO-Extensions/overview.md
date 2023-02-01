@@ -1,1 +1,0 @@
-A collection of Azure DevOps extensions for personal learning.

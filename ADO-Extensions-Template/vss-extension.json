@@ -1,8 +1,8 @@
 {
   "manifestVersion": 1,
-  "version": "1.0.16",
-  "name": "RazType Hot Reload and Debug",
-  "description": "Use hot reload and debug directly in VS Code",
+  "version": "1.0.4",
+  "name": "ADO Base Template Extension",
+  "description": "My base template extension",
   "publisher": "RazType",
   "demands": ["api-version/3.0"],
   "categories": ["Azure Repos"],
@@ -13,11 +13,11 @@
   ],
   "content": {
     "details": {
-      "path": "README.md"
+      "path": "Marketplace.md"
     }
   },
   "icons": {
-    "default": "img/world.png"
+    "default": "img/logo.png"
   },
   "files": [
     {
@@ -27,29 +27,33 @@
     {
       "path": "img",
       "addressable": true
+    },
+    {
+      "path": "static",
+      "addressable": true
     }
   ],
   "contributions": [
     {
-      "id": "hello-world-hub-group",
+      "id": "my-hub-group",
       "type": "ms.vss-web.hub-group",
-      "description": "Sample hub group",
+      "description": "My hub group",
       "targets": ["ms.vss-web.project-hub-groups-collection"],
       "properties": {
-        "name": "Hot Reload and Debug",
+        "name": "My Hub Group",
         "icon": {
-          "dark": "img/logo.png",
-          "light": "img/logo.png"
+          "dark": "img/sample.png",
+          "light": "img/sample.png"
         }
       }
     },
     {
-      "id": "default-hub",
+      "id": "hub-hotreload",
       "type": "ms.vss-web.hub",
-      "targets": [".hello-world-hub-group"],
+      "targets": [".my-hub-group"],
       "properties": {
-        "uri": "dist/hub/hub.html",
-        "name": "Hello World!",
+        "uri": "dist/hub-hotreload/hub-hotreload.html",
+        "name": "Hot Reload",
         "icon": {
           "dark": "img/world.png",
           "light": "img/world.png"
@@ -57,11 +61,11 @@
       }
     },
     {
-      "id": "iframe-hub",
+      "id": "hub-iframe",
       "type": "ms.vss-web.hub",
-      "targets": [".hello-world-hub-group"],
+      "targets": [".my-hub-group"],
       "properties": {
-        "uri": "dist/Hub-iFrame/Hub-iFrame.html",
+        "uri": "dist/hub-iframe/hub-iframe.html",
         "name": "iFrame",
         "icon": {
           "dark": "img/iframe.png",
