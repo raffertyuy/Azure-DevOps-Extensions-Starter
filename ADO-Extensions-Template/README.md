@@ -13,6 +13,7 @@ The key changes from merging these codes are:
 "build:dev": "npm run compile:dev && npm run package:dev",
 ```
 - added `--rev-version` to `tfx extension package` and `tfx extension publish` scripts
+- removed sample unit testing code, please refer to [samples](https://github.com/microsoft/azure-devops-extension-sample) if you want to add that back in.
 
 ## System Notes
 This template was created using Windows 11 and VS Code, with the following installed
