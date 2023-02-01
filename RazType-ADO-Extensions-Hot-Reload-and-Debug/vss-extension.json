@@ -1,6 +1,6 @@
 {
   "manifestVersion": 1,
-  "version": "1.0.11",
+  "version": "1.0.14",
   "name": "RazType Hot Reload and Debug",
   "description": "Use hot reload and debug directly in VS Code",
   "publisher": "RazType",
@@ -36,10 +36,10 @@
       "description": "Sample hub group",
       "targets": ["ms.vss-web.project-hub-groups-collection"],
       "properties": {
-        "name": "Hello World!",
+        "name": "Hot Reload and Debug",
         "icon": {
-          "dark": "img/world.png",
-          "light": "img/world.png"
+          "dark": "img/logo.png",
+          "light": "img/logo.png"
         }
       }
     },
@@ -48,7 +48,25 @@
       "type": "ms.vss-web.hub",
       "targets": [".hello-world-hub-group"],
       "properties": {
-        "uri": "dist/hub/hub.html"
+        "uri": "dist/hub/hub.html",
+        "name": "Hello World!",
+        "icon": {
+          "dark": "img/world.png",
+          "light": "img/world.png"
+        }
+      }
+    },
+    {
+      "id": "iframe-hub",
+      "type": "ms.vss-web.hub",
+      "targets": [".hello-world-hub-group"],
+      "properties": {
+        "uri": "dist/Hub-iFrame/Hub-iFrame.html",
+        "name": "iFrame",
+        "icon": {
+          "dark": "img/iframe.png",
+          "light": "img/iframe.png"
+        }
       }
     }
   ]
