@@ -1,0 +1,17 @@
+{
+    "contributions": [
+        {
+            "id": "hub-hotreload",
+            "type": "ms.vss-web.hub",
+            "targets": [".my-hub-group"],
+            "properties": {
+                "uri": "dist/hub-hotreload/hub-hotreload.html",
+                "name": "Hot Reload",
+                "icon": {
+                    "dark": "img/world.png",
+                    "light": "img/world.png"
+                }
+            }
+        }
+    ]
+}

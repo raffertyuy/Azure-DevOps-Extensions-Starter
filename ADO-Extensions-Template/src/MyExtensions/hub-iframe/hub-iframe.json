@@ -1,0 +1,17 @@
+{
+    "contributions": [
+        {
+            "id": "hub-iframe",
+            "type": "ms.vss-web.hub",
+            "targets": [".my-hub-group"],
+            "properties": {
+                "uri": "dist/hub-iframe/hub-iframe.html",
+                "name": "iFrame",
+                "icon": {
+                    "dark": "img/iframe.png",
+                    "light": "img/iframe.png"
+                }
+            }
+        }
+    ]
+}

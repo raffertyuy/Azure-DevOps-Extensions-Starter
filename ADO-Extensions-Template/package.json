@@ -15,12 +15,12 @@
     "clean": "rimraf ./dist",
     "compile": "npm run clean && webpack --mode production",
     "compile:dev": "npm run clean && webpack --mode development",
-    "package": "npm run compile && tfx extension create --manifest-globs vss-extension.json --overrides-file configs/release.json --output-path packages --rev-version",
-    "package:dev": "npm run compile:dev && tfx extension create --manifest-globs vss-extension.json --overrides-file configs/dev.json --output-path packages --rev-version",
+    "package": "npm run compile && tfx extension create --manifest-globs vss-extension.json src/MyExtensions/**/*.json --overrides-file configs/release.json --output-path packages --rev-version",
+    "package:dev": "npm run compile:dev && tfx extension create --manifest-globs vss-extension.json src/MyExtensions/**/*.json --overrides-file configs/dev.json --output-path packages --rev-version",
     "build": "npm run compile && npm run package",
     "build:dev": "npm run compile:dev && npm run package:dev",
-    "publish": "npm run compile && tfx extension publish --manifest-globs vss-extension.json --overrides-file configs/release.json --output-path packages --rev-version",
-    "publish:dev": "npm run compile:dev && tfx extension publish --manifest-globs vss-extension.json --overrides-file configs/dev.json --output-path packages --rev-version",
+    "publish": "npm run compile && tfx extension publish --manifest-globs vss-extension.json src/MyExtensions/**/*.json --overrides-file configs/release.json --output-path packages --rev-version",
+    "publish:dev": "npm run compile:dev && tfx extension publish --manifest-globs vss-extension.json src/MyExtensions/**/*.json --overrides-file configs/dev.json --output-path packages --rev-version",
     "start:dev": "webpack-dev-server --mode development"
   },
   "dependencies": {

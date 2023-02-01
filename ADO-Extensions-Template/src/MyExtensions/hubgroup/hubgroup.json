@@ -1,0 +1,16 @@
+{
+    "contributions": [
+        {
+            "id": "my-hub-group",
+            "type": "ms.vss-web.hub-group",
+            "targets": ["ms.vss-web.project-hub-groups-collection"],
+            "properties": {
+                "name": "My Hub Group",
+                "icon": {
+                "dark": "img/sample.png",
+                "light": "img/sample.png"
+                }
+            }
+        }
+    ]
+}
