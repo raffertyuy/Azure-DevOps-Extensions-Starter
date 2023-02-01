@@ -2,6 +2,7 @@ node_modules/
 typings/
 dist/
 out/
+packages/
 
 # macOS
 .DS_Store
