@@ -35,7 +35,6 @@ The [samples](https://github.com/microsoft/azure-devops-extension-sample) are lu
 3. If you get a bunch of errors, try installing the dependencies specified in the [sample readme](https://github.com/microsoft/azure-devops-extension-sample#readme) and try `npm install` again. _(NOTE: Not everything needs to be globally installed, I just did to get it working fast.)_
     ```bash
     npm install -g typescript
-    npm install -g node-sass
     npm install -g webpack
     ```
 4. Modify the `azure-devops-extension.json` manifest and change to your registered **Publisher Name**.

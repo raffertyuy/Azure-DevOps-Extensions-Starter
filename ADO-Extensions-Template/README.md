@@ -21,6 +21,7 @@ This template was created using Windows 11 and VS Code, with the following insta
 - webpack v5.75.0
 - webpack-cli v5.0.1
 - webpack-dev-server v4.11.1
+- typescript
 
 The following **Environment Variables** are added to the operating system
 | key          | value                     |
