@@ -6,6 +6,14 @@
   "publisher": "RazType",
   "demands": ["api-version/3.0"],
   "categories": ["Azure Repos"],
+  "tags": [
+    "sample",
+    "learning"
+  ],
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/raffertyuy/Azure-DevOps-GitHub-Integration-Toolkit"
+  },
   "targets": [
     {
       "id": "Microsoft.VisualStudio.Services"
