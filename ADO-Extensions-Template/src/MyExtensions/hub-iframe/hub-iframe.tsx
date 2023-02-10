@@ -1,11 +1,11 @@
 import "azure-devops-ui/Core/override.css";
+import { showRootComponent } from "../../common";
 import "./hub-iframe.scss";
 
 import * as React from "react";
 import * as SDK from "azure-devops-extension-sdk";
 
 import { Page } from "azure-devops-ui/Page";
-import { showRootComponent } from "../../common";
 
 class HubIFrameContent extends React.Component<{}, {}> {
 

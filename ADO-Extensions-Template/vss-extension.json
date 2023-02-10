@@ -1,6 +1,6 @@
 {
   "manifestVersion": 1,
-  "version": "1.0.9",
+  "version": "1.0.32",
   "name": "ADO Base Template Extension",
   "description": "My base template extension",
   "publisher": "RazType",
@@ -34,10 +34,6 @@
     },
     {
       "path": "img",
-      "addressable": true
-    },
-    {
-      "path": "static",
       "addressable": true
     }
   ]

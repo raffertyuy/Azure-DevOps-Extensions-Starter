@@ -15,6 +15,11 @@ The key changes from merging these codes are:
 - added `--rev-version` to `tfx extension package` and `tfx extension publish` scripts
 - removed sample unit testing code, please refer to [samples](https://github.com/microsoft/azure-devops-extension-sample) if you want to add that back in.
 
+## Note on Widget Extensions
+According to [this](https://stackoverflow.com/questions/65464990/azure-devops-extension-sdk-configuration-of-widget) and the fact that [this](https://github.com/microsoft/azure-devops-extension-sdk/issues/22) is still open, it appears that using the old SDK is still better for creating Widgets. This is probably why there aren't any widget [samples](https://github.com/microsoft/azure-devops-extension-sample).
+
+The method implemented in [widget-hello](/src/MyExtensions/widget-hello/) is a workaround using the example from [yunsii](https://github.com/microsoft/azure-devops-extension-sdk/issues/17#issuecomment-669665342) and combined with [vss-widget.tsx](/src/lib/vss-widget.tsx) from [bworline](https://github.com/microsoft/azure-devops-extension-sdk/issues/22#issuecomment-606957335). There may be other better ways to do this, but this works for now.
+
 ## System Notes
 This template was created using Windows 11 and VS Code, with the following installed
 - NodeJS v18.12.0 (installed using NVM)

@@ -1,4 +1,5 @@
 import "azure-devops-ui/Core/override.css";
+import { showRootComponent } from "../../common";
 import "./hub-hotreload.scss";
 
 import * as SDK from "azure-devops-extension-sdk";
@@ -9,8 +10,6 @@ import { Panel } from "azure-devops-ui/Panel";
 import { ZeroData, ZeroDataActionType } from "azure-devops-ui/ZeroData";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-
-import { showRootComponent } from "../../common";
 
 interface IHubState {
   dialogShown: boolean;
@@ -49,7 +48,7 @@ class HubHotReloadContent extends React.Component<{}, IHubState> {
         <ZeroData
           iconProps={{ iconName: "World" }}
           imageAltText="World image"
-          primaryText="Hot Reload and Debug!"
+          primaryText="Hot Reload and Debug Demo v3!"
           secondaryText={
             <span>
               Check out the{" "}

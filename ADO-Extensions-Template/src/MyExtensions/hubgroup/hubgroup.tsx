@@ -1,1 +1,1 @@
-// required empty file for hubgroup.json to be part of the build.
+// required empty file for <extension>.json to be part of the build.

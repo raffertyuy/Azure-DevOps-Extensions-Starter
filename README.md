@@ -14,7 +14,7 @@ To make development faster, a working template is found in the [ADO-Extensions-T
 1. [azure-devops-extension-sample](https://github.com/microsoft/azure-devops-extension-sample): the main samples repo using the latest Azure devops extensions SDK, and
 2. [azure-devops-extension-hot-reload-and-debug](https://github.com/microsoft/azure-devops-extension-hot-reload-and-debug): a way to locally debug changes (also see [this blog post](https://devblogs.microsoft.com/devops/streamlining-azure-devops-extension-development/)).
     - To debug, install Firefox and launch the webpack-dev-server with `webpack-dev-server --mode development`
-    - Remember to point to the specific html URL that you want to debug (i.e. https://localhost:3000/dist/Hub-iFrame/Hub-iFrame.html)
+    - Remember to point to the specific html URL that you want to debug (i.e. https://localhost:3000/dist/hub-hotreload/hub-hotreload.html)
 
 ### Tips for updating extensions
 1. Version number should always be incremented on every update. This is done in the `vss-extension.json` file. When updating an extension, all organizations using the widgets will get the update.
