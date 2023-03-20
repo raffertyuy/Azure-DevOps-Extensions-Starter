@@ -1,5 +1,7 @@
 # Azure-DevOps-Extensions-Starter
-Azure DevOps allows creating custom [extensions](https://learn.microsoft.com/en-us/azure/devops/extend/get-started/node?toc=%2Fazure%2Fdevops%2Fmarketplace-extensibility%2Ftoc.json&view=azure-devops). The challenge is that the documentation is severely lacking (see my [Learning Notes](/Learning.md)).
+Azure DevOps allows creating custom [extensions](https://learn.microsoft.com/en-us/azure/devops/extend/get-started/node?toc=%2Fazure%2Fdevops%2Fmarketplace-extensibility%2Ftoc.json&view=azure-devops). As there are gaps in the documentation, I wrote my [Learning Notes](/Learning.md) as I created this template.
+
+![screenshot](/screenshot.png)
 
 This repository is my attempt to combine the best practices of these two code samples:
 1. [azure-devops-extension-sample](https://github.com/microsoft/azure-devops-extension-sample): the main samples repo using the latest Azure devops extensions SDK, and
