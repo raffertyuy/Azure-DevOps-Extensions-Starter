@@ -23,7 +23,7 @@ There are a lot of extension samples in GitHub that no longer work for various r
 
 1. [**Dashboard Manager**](https://github.com/microsoft/vsts-extension-samples/tree/master/dashboard-manager) by arsaveli
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![Dashboard Manager](../assets/sample-dashboardmanager.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![Dashboard Manager](./assets/sample-dashboardmanager.png)
 
 ---
 ## VSS Extension - using Typescript instead of Javascript
@@ -82,7 +82,7 @@ Since the SDK is not well documented, here's my attempt on how to navigate throu
     git clone https://github.com/microsoft/vss-web-extension-sdk.git
     ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![vss-web-extension-sdk-vscode-outline](../assets//vss-web-extension-sdk-vscode-outline.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![vss-web-extension-sdk-vscode-outline](./assets/vss-web-extension-sdk-vscode-outline.png)
 
 - The SDK is written using [TypeScript](https://www.typescriptlang.org/).
 
@@ -96,5 +96,5 @@ Since the SDK is not well documented, here's my attempt on how to navigate throu
     - REST clients and contracts for Release Management (see `typings/rmo.d.ts`)
 - and the Dependency Graph
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![vss-web-extension-sdk-dependencies](../assets//vss-web-extension-sdk-dependencies.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![vss-web-extension-sdk-dependencies](./assets/vss-web-extension-sdk-dependencies.png)
 - the [README](https://github.com/Microsoft/vss-web-extension-sdk#readme) also shares how you can consume these types using typescript.
